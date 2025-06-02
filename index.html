@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>縦スクロールシューティングゲーム</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+        }
+        #gameContainer {
+            position: relative;
+        }
+        #gameCanvas {
+            border: 2px solid #fff;
+            background-color: #111;
+        }
+        #gameInfo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            font-size: 20px;
+        }
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            display: none;
+        }
+        #gameClear {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            display: none;
+        }
+        #startButton {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #startButton:hover {
+            background-color: #45a049;
+        }
+        #restartButton {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #restartButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div id="gameInfo">
+            <div>スコア: <span id="score">0</span></div>
+            <div>残機: <span id="lives">3</span></div>
+        </div>
+        <div id="gameOver">
+            <div>GAME OVER</div>
+            <div>最終スコア: <span id="finalScore">0</span></div>
+            <button id="startButton">もう一度プレイ</button>
+        </div>
+        <div id="gameClear">
+            <div>GAME CLEAR!</div>
+            <div>最終スコア: <span id="clearScore">0</span></div>
+            <button id="restartButton">もう一度プレイ</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
